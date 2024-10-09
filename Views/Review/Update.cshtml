@@ -1,0 +1,42 @@
+@model ReviewUpdateModel
+
+<form method="post" enctype="multipart/form-data">
+	<input asp-for="Id" hidden />
+	<div class="border p-3 mt-4 bg-primary">
+		<div class="row pb-2">
+			<h2 class="text-light">Update Review</h2>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Title" class="text-light"></label>
+			<input asp-for="Title" class="form-control" />
+			<span asp-validation-for="Title" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="OldPath" class="text-light">Old Photo</label>
+			<input asp-for="OldPath" class="form-control d-none" />
+			<br>
+			<img class="w-25" src="/@ViewData["PhotoPath"]" alt="">
+		</div>
+		<div class="mb-3">
+			<label asp-for="ReviewPhoto" class="text-light">New Photo</label>
+			<br>
+			<input asp-for="ReviewPhoto" class="custom-file-input text-light">
+			<span asp-validation-for="ReviewPhoto" class="text-light"></span>
+									
+		</div>
+        <div class="mb-3">
+			<label asp-for="ReviewText" class="text-light"></label>
+			<input asp-for="ReviewText" class="form-control" />
+			<span asp-validation-for="ReviewText" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Score" class="text-light"></label>
+			<input asp-for="Score" class="form-control" />
+			<span asp-validation-for="Score" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-info" style="width:150px">Update</button>
+		<a asp-controller="Review" asp-action="Index" class="btn btn-secondary" style="width:150px" >
+			Back
+		</a>
+	</div>
+</form>

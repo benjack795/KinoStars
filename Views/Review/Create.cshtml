@@ -1,0 +1,35 @@
+@model ReviewViewModel
+
+<form method="post" enctype="multipart/form-data">
+	<div class="border p-3 mt-4 bg-primary">
+		<div class="row pb-2">
+			<h2 class="text-light">Create Review</h2>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Title" class="text-light"></label>
+			<input asp-for="Title" class="form-control" />
+			<span asp-validation-for="Title" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="ReviewPhoto" class="text-light">Photo</label>
+			<br>
+			<input asp-for="ReviewPhoto" class="custom-file-input text-light">
+			<br>
+			<span asp-validation-for="ReviewPhoto" class="text-danger"></span>
+		</div>
+        <div class="mb-3">
+			<label asp-for="ReviewText" class="text-light">Review</label>
+			<input asp-for="ReviewText" class="form-control" />
+			<span asp-validation-for="ReviewText" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Score" class="text-light"></label>
+			<input asp-for="Score" class="form-control" />
+			<span asp-validation-for="Score" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-info" style="width:150px">Create</button>
+		<a asp-controller="Review" asp-action="Index" class="btn btn-secondary" style="width:150px" >
+			Back
+		</a>
+	</div>
+</form>

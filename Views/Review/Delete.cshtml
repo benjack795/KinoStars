@@ -1,0 +1,32 @@
+@model Review
+
+<form method="post" asp-action="DeletePOST">
+    <input asp-for="Id" hidden />
+	<div class="border p-3 mt-4 bg-primary">
+		<div class="row pb-2">
+			<h2 class="text-light">Delete Review</h2>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Title" class="text-light"></label>
+			<input asp-for="Title" class="form-control" disabled/>
+		</div>
+		<div class="mb-3">
+			<label asp-for="PhotoPath" class="text-light">Photo</label>
+			<input asp-for="PhotoPath" class="form-control d-none" disabled/> 
+			<br>
+			<img class="w-25" src="/@ViewData["PhotoPath"]" alt="">
+		</div>
+        <div class="mb-3">
+			<label asp-for="ReviewText" class="text-light">Review</label>
+			<input asp-for="ReviewText" class="form-control" disabled />
+		</div>
+		<div class="mb-3">
+			<label asp-for="Score" class="text-light"></label>
+			<input asp-for="Score" class="form-control" disabled/>
+		</div>
+		<button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+		<a asp-controller="Review" asp-action="Index" class="btn btn-secondary" style="width:150px" >
+			Back
+		</a>
+	</div>
+</form>
